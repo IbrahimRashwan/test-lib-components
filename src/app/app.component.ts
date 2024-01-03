@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MukValidationMessageComponent } from "ngx-mui-kit/components/muk-form/muk-fields/muk-validation-messages";
+import { FormControl } from '@angular/forms';
+import { IControlCustomErrors } from 'ngx-mui-kit/components/muk-form/interfaces';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'test-lib-components';
+  controller = new FormControl();
+  errors: IControlCustomErrors[] = [{
+    errorName:"number",
+    errorMessage:"invalid number"
+  }];
 }
